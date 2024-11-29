@@ -9,12 +9,10 @@ body {
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
-    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Georgia', serif;
 }
 
 .header {
@@ -38,8 +36,40 @@ body {
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.poem-section {
+    text-align: center;
+}
+
+.author {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.poem {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.poem p {
+    margin: 8px 0;
+}
+
+.image-section {
+    margin-top: 40px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 button, input[type="submit"] {

@@ -1,35 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poetry Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Zoey (Zhiyu) Zhang - homepage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .page { display: none; }
+        .active { display: block; }
+    </style>
+    <script>
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        // Show spring page by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showPage('spring');
+        });
+    </script>
 </head>
-<body>
-    <div class="container">
-        <div class="poem-section">
-            <h1>The Road Not Taken</h1>
-            <p class="author">by Robert Frost</p>
-            
-            <div class="poem">
-                <p>Two roads diverged in a yellow wood,</p>
-                <p>And sorry I could not travel both</p>
-                <p>And be one traveler, long I stood</p>
-                <p>And looked down one as far as I could</p>
-                <p>To where it bent in the undergrowth;</p>
-                <br>
-                <p>Then took the other, as just as fair,</p>
-                <p>And having perhaps the better claim,</p>
-                <p>Because it was grassy and wanted wear;</p>
-                <p>Though as for that the passing there</p>
-                <p>Had worn them really about the same.</p>
-            </div>
-            
-            <div class="image-section">
-                <img src="{{ url_for('static', filename='forest-path.jpg') }}" alt="A forking path in a forest">
-            </div>
+<body onload="showPage('home')">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" style="width: 35px;">
+        </a>
+        <div class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('spring')">SPRING</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('summer')">SUMMER</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('fall')">FALL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="showPage('winter')">WINTER</a>
+                </li>
+            </ul>
         </div>
+        <div class="sound-toggle">
+            <img src="{{ url_for('static', filename='images/sound.png') }}" alt="Sound" style="width: 20px;">
+        </div>
+    </nav>
+
+    <!-- Homepage -->
+    <div id="home" class="container text-center mt-5 page active">
+        <p class="subtitle">My father studied Chinese language and literature in college and was part of the first generation to attend college after 1976. Writing poetry has been his lifelong passion, and he has created countless poems over the years. This website is my way of bringing his words to life—using AI to recreate the imagery in his poems and share the beauty of my hometown, Yueyang, Hunan, with the world.</p>
+        <div class="profile-img-container">
+            <img src="Profile.png" alt="Zoey Zhang" class="profile-img">
+        </div>
+        <p class="location mt-3">&#128205; Providence, RI</p>
     </div>
+
+    <!-- Shanshui page -->
+    <div id="shanshui" class="container text-center mt-5 page">
+        <p class="small">Do you know which one was not AI-generated?</p>
+            <img src="Shanshui 8.png"  class="shanshui" style="width: 400px; vertical-align: middle; margin: 15px;">
+            <img src="shanshui.png"  class="shanshui" style="width: 400px; vertical-align: middle; margin: 15px;">
+            <img src="shanshui2.png"  class="shanshui" style="width: 400px; vertical-align: middle; margin: 15px;">
+            <img src="shanshui4.png"  class="shanshui" style="width: 400px; vertical-align: middle; margin: 15px;">
+            <img src="shanshui6.png"  class="shanshui" style="width: 400px; vertical-align: middle; margin: 15px;">
+            <img src="shanshui3.png"  class="shanshui" style="width: 400px; vertical-align: middle; margin: 15px;">
+
+    <p class="small">AI-Shanshui</p>
+    </div>
+
+    <!-- Film page -->
+    <div id="film" class="container text-center mt-5 page">
+        <video src="Memories.mov"  class="film" style="width: 1000px; vertical-align: middle;"  controls autoplay></video>
+
+    <p class="small">AI-generated short film</p>
+    <p class="small">Tools: Midjourney, ChatGPT, Runway</p>
+    </div>
+    <!-- Music page -->
+    <div id="music" class="container text-center mt-5 page">
+        <img src="shuqi.JPG" alt="shuqi" style="width: 400px; vertical-align: middle; margin: 20px;;">
+        <p class="small">Luk Yu Tea House is a well-known traditional tea house located in Hong Kong, established in 1933. It has a nostalgic and historic ambiance that attracts both locals and tourists. The narration is provided by the famous Chinese actress Shu Qi, who recorded an audio piece related to Luk Yu Tea House to capture its cultural essence and add a personal touch to its story.
+        </p>
+        <audio src="Introduction (Mandarin).mp3" controls class="profile-audio">
+        </audio>
+        <p>
+        </p >
+        <audio src="Luk Yu Tea House.mp3" controls class="profile-audio">
+        </audio>
+        <p class="small">This is intended solely for academic purposes. If there is any infringement, please contact me for removal.
+        </p>
+    </div>
+
+    <footer class="small mt-5 text-center">
+        Copyright &#169; Zoey Zhang
+    </footer>
+
 </body>
 </html>

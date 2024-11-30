@@ -1,113 +1,59 @@
 body {
-    background-color: #fff;
-    color: #212529;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin: 0;
-    text-align: left;
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
 }
 
-.container {
+.navbar {
+    background-color: transparent;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-nav {
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #666;
+}
+
+.page {
+    display: none;
+    padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px;
-    font-family: 'Georgia', serif;
 }
 
-.header {
-    background-color: #477bff;
-    color: #fff;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
+.page.active {
+    display: block;
+}
+
+.content-text {
     text-align: center;
-}
-
-.section {
-    padding-bottom: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-top: 0.5rem;
-}
-
-.section:hover {
-    background-color: #f5f5f5;
-    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
-}
-
-h1 {
-    color: #2c3e50;
-    margin-bottom: 5px;
-}
-
-.poem-section {
-    text-align: center;
-}
-
-.author {
-    color: #7f8c8d;
-    font-style: italic;
-    margin-bottom: 30px;
-}
-
-.poem {
-    text-align: left;
-    max-width: 500px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.poem p {
-    margin: 8px 0;
-}
-
-.image-section {
-    margin-top: 40px;
-}
-
-.image-section img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-button, input[type="submit"] {
-    background-color: #d9edff;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    font-size: 0.95rem;
-    font-weight: 400;
-    line-height: 1.5;
-    padding: 0.375rem 0.75rem;
-    text-align: center;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    vertical-align: middle;
-}
-
-input[type="text"], input[type="number"] {
+    margin: 3rem auto;
     line-height: 1.8;
-    width: 25%;
+    font-size: 1.1rem;
 }
 
-input[type="text"]:hover, input[type="number"]:hover {
-    background-color: #f5f5f5;
-    transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
-}
+<div id="spring" class="page">
+    <!-- Spring content -->
+</div>
 
-table {
-    background-color: transparent;
-    margin-bottom: 1rem;
-    width: 100%;
-}
+<div id="summer" class="page">
+    <!-- Summer content -->
+</div>
 
-table th,
-table td {
-    padding: 0.75rem;
-    vertical-align: middle;
-}
+<div id="fall" class="page">
+    <!-- Fall content -->
+</div>
 
-tbody tr:nth-of-type(odd) {
-    background-color: rgb(179, 208, 255, 0.3)
-}
-
+<div id="winter" class="page">
+    <!-- Winter content -->
+</div>

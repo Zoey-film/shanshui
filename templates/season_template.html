@@ -98,6 +98,40 @@
             height: 100%;
             position: relative;
         }
+
+        .season-page {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .season-image {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 1;
+            margin: 0 auto 30px;
+        }
+
+        .season-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-poem {
+            margin-top: 30px;
+        }
+
+        .poem-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .poem-content {
+            white-space: pre-line;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
@@ -117,6 +151,9 @@
     </div>
 
     <div class="season-page">
+        <div class="season-image">
+            <img src="{{ url_for('static', filename='images/' + bg_image) }}" alt="{{ season_name }}">
+        </div>
         <div class="featured-poem">
             <h2 class="poem-title">{{ featured_poem.title }}</h2>
             <div class="poem-content">{{ featured_poem.content }}</div>

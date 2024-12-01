@@ -90,6 +90,14 @@
             font-size: 24px;
             color: black;
         }
+
+        .season-card a {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -97,13 +105,13 @@
     <div class="nav-container">
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
         <div class="nav-links">
-            <a href="#" onclick="showPage('spring')">SPRING</a>
+            <a href="{{ url_for('season_page', season='spring') }}">SPRING</a>
             <span class="nav-separator">|</span>
-            <a href="#" onclick="showPage('summer')">SUMMER</a>
+            <a href="{{ url_for('season_page', season='summer') }}">SUMMER</a>
             <span class="nav-separator">|</span>
-            <a href="#" onclick="showPage('fall')">FALL</a>
+            <a href="{{ url_for('season_page', season='fall') }}">FALL</a>
             <span class="nav-separator">|</span>
-            <a href="#" onclick="showPage('winter')">WINTER</a>
+            <a href="{{ url_for('season_page', season='winter') }}">WINTER</a>
         </div>
         <img src="{{ url_for('static', filename='images/sound.png') }}" alt="Sound" class="sound-icon">
     </div>
@@ -121,47 +129,30 @@
 
     <!-- Season Grid -->
     <div class="season-grid">
-        <div class="season-card" onclick="showPage('spring')">
-            <img src="{{ url_for('static', filename='images/spring.jpg') }}" alt="Spring">
-            <div class="season-label">Spring</div>
+        <div class="season-card">
+            <a href="{{ url_for('season_page', season='spring') }}">
+                <img src="{{ url_for('static', filename='images/spring.jpg') }}" alt="Spring">
+                <div class="season-label">Spring</div>
+            </a>
         </div>
-        <div class="season-card" onclick="showPage('summer')">
-            <img src="{{ url_for('static', filename='images/summer.png') }}" alt="Summer">
-            <div class="season-label">Summer</div>
+        <div class="season-card">
+            <a href="{{ url_for('season_page', season='summer') }}">
+                <img src="{{ url_for('static', filename='images/summer.png') }}" alt="Summer">
+                <div class="season-label">Summer</div>
+            </a>
         </div>
-        <div class="season-card" onclick="showPage('fall')">
-            <img src="{{ url_for('static', filename='images/fall.png') }}" alt="Fall">
-            <div class="season-label">Fall</div>
+        <div class="season-card">
+            <a href="{{ url_for('season_page', season='fall') }}">
+                <img src="{{ url_for('static', filename='images/fall.png') }}" alt="Fall">
+                <div class="season-label">Fall</div>
+            </a>
         </div>
-        <div class="season-card" onclick="showPage('winter')">
-            <img src="{{ url_for('static', filename='images/winter.png') }}" alt="Winter">
-            <div class="season-label">Winter</div>
+        <div class="season-card">
+            <a href="{{ url_for('season_page', season='winter') }}">
+                <img src="{{ url_for('static', filename='images/winter.png') }}" alt="Winter">
+                <div class="season-label">Winter</div>
+            </a>
         </div>
     </div>
-
-    <!-- Season Pages (blank for now) -->
-    <div id="spring" class="page">
-        <!-- Spring content will go here -->
-    </div>
-
-    <div id="summer" class="page">
-        <!-- Summer content will go here -->
-    </div>
-
-    <div id="fall" class="page">
-        <!-- Fall content will go here -->
-    </div>
-
-    <div id="winter" class="page">
-        <!-- Winter content will go here -->
-    </div>
-
-    <script>
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-        }
-    </script>
 </body>
 </html>

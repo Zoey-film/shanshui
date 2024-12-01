@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ season_name }} - Poetry</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("{{ url_for('static', filename='images/' + bg_image) }}");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 3;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+            padding: 0 20px;
+        }
+
+        .season-page {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .featured-poem {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            max-width: 400px;
+            color: black;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .poem-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .poem-content {
+            font-size: 16px;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="{{ url_for('season_page', season='spring') }}">SPRING</a>
+            <span class="nav-separator">|</span>
+            <a href="{{ url_for('season_page', season='summer') }}">SUMMER</a>
+            <span class="nav-separator">|</span>
+            <a href="{{ url_for('season_page', season='fall') }}">FALL</a>
+            <span class="nav-separator">|</span>
+            <a href="{{ url_for('season_page', season='winter') }}">WINTER</a>
+        </div>
+    </div>
+
+    <div class="season-page">
+        <div class="featured-poem">
+            <h2 class="poem-title">{{ featured_poem.title }}</h2>
+            <div class="poem-content">{{ featured_poem.content }}</div>
+        </div>
+    </div>
+</body>
+</html> 

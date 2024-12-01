@@ -189,6 +189,58 @@
             margin: 30px auto;
             padding: 0 20px;
         }
+
+        .poem-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .poem-form textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            resize: vertical;
+        }
+
+        .poem-form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .poem-form button {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .poem-form button:hover {
+            background-color: #333;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #333;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -222,6 +274,16 @@
                     <div class="user-poem-author">- {{ poem.user }}</div>
                 </div>
                 {% endfor %}
+            </div>
+            <div class="poem-form">
+                <form action="{{ url_for('submit_poem') }}" method="POST">
+                    <input type="hidden" name="seed_page" value="{{ season_name.lower() }}">
+                    <label class="form-label" for="content">Write your poem:</label>
+                    <textarea name="content" id="content" required></textarea>
+                    <label class="form-label" for="author">Your name:</label>
+                    <input type="text" name="author" id="author" required>
+                    <button type="submit">Submit Poem</button>
+                </form>
             </div>
         </div>
     </div>

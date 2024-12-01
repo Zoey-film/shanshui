@@ -32,15 +32,22 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
             justify-content: center;
             flex-grow: 1;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: black;
             font-size: 16px;
+            padding: 0 20px;
+        }
+
+        .nav-separator {
+            color: black;
+            font-size: 16px;
+            padding: 0 10px;
         }
 
         .sound-icon {
@@ -91,8 +98,11 @@
         <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
         <div class="nav-links">
             <a href="#" onclick="showPage('spring')">SPRING</a>
+            <span class="nav-separator">|</span>
             <a href="#" onclick="showPage('summer')">SUMMER</a>
+            <span class="nav-separator">|</span>
             <a href="#" onclick="showPage('fall')">FALL</a>
+            <span class="nav-separator">|</span>
             <a href="#" onclick="showPage('winter')">WINTER</a>
         </div>
         <img src="{{ url_for('static', filename='images/sound.png') }}" alt="Sound" class="sound-icon">

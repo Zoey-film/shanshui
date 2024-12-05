@@ -76,7 +76,17 @@ def season_page(season):
     season_data = {
         'spring': {
             'title': 'Spring Poem',
-            'content': 'Spring poem content...',
+            'content': """In gentle morning light
+Peach blossoms unfold their grace
+Nature's sweet embrace
+
+Warm sunbeams dance through
+Fresh leaves painting shadows green
+Spring's art comes alive
+
+Mountain streams whisper
+Tales of winter's passing now
+As new life begins""",
             'bg_image': 'spring.jpg'
         },
         'summer': {

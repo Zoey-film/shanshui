@@ -246,7 +246,9 @@
 <body>
     <!-- Navigation -->
     <div class="nav-container">
-        <img src="{{ url_for('static', filename='images/stamp.png') }}" alt="Logo" class="logo">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/stamp.png') }}" alt="Logo" class="logo">
+        </a>
         <div class="nav-links">
             <a href="{{ url_for('season_page', season='spring') }}">SPRING</a>
             <span class="nav-separator">|</span>

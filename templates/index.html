@@ -61,9 +61,10 @@
             padding: 0 20px;
         }
 
-        .season-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .season-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             gap: 20px;
             margin-top: 100px;
             max-width: 1000px;
@@ -73,7 +74,8 @@
 
         .season-card {
             position: relative;
-            aspect-ratio: 1;
+            width: 22%;
+            aspect-ratio: 1/2.5; /* Adjust height ratio to match image aspect */
             cursor: pointer;
         }
 
@@ -130,32 +132,33 @@
         </p>
     </div>
 
-    <!-- Season Grid -->
-    <div class="season-grid">
+    <!-- Seasons Section -->
+    <div class="season-row">
         <div class="season-card">
             <a href="{{ url_for('season_page', season='spring') }}">
-                <img src="{{ url_for('static', filename='images/spring.jpg') }}" alt="Spring">
-                <div class="season-label">Spring</div>
+                <img src="{{ url_for('static', filename='images/spring.jpg') }}" alt="Spring" class="season-image">
+                <div class="season-label">春</div>
             </a>
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='summer') }}">
-                <img src="{{ url_for('static', filename='images/summer.png') }}" alt="Summer">
-                <div class="season-label">Summer</div>
+                <img src="{{ url_for('static', filename='images/summer.jpg') }}" alt="Summer" class="season-image">
+                <div class="season-label">夏</div>
             </a>
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='fall') }}">
-                <img src="{{ url_for('static', filename='images/fall.png') }}" alt="Fall">
-                <div class="season-label">Fall</div>
+                <img src="{{ url_for('static', filename='images/fall.jpg') }}" alt="Fall" class="season-image">
+                <div class="season-label">秋</div>
             </a>
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='winter') }}">
-                <img src="{{ url_for('static', filename='images/winter.png') }}" alt="Winter">
-                <div class="season-label">Winter</div>
+                <img src="{{ url_for('static', filename='images/winter.jpg') }}" alt="Winter" class="season-image">
+                <div class="season-label">冬</div>
             </a>
         </div>
     </div>
 </body>
 </html>
+ 

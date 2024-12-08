@@ -76,32 +76,87 @@ def season_page(season):
     season_data = {
         'spring': {
             'title': 'Spring Poem',
-            'content': """In gentle morning light
-Peach blossoms unfold their grace
-Nature's sweet embrace
+            'content': """故园行
+己亥年二月
 
-Warm sunbeams dance through
-Fresh leaves painting shadows green
-Spring's art comes alive
+竹暗烟村雨，花深古渡洲。
+春风吹我面，缕缕是乡愁。
 
-Mountain streams whisper
-Tales of winter's passing now
-As new life begins""",
-            'bg_image': 'spring.jpg'
+
+A Journey to My Old Home
+Second Month of the Year of Jihai
+
+Bamboo shadows veil the village in misty rain,
+Flowers bloom deep on the ancient ferry plain.
+Spring breezes caress my face so gently,
+Each strand whispers of homesick melancholy.""",
+            'bg_image': 'spring.png'
         },
         'summer': {
             'title': 'Summer Poem',
-            'content': 'Summer poem content...',
+            'content': """渔歌子
+
+金鹗山 立夏 小雨
+戊戌年三月
+
+乳燕双潭水上飞。溪头游鲫雨中肥。
+蕉叶帽，杏花衣。林间独步不怀归。
+
+Fisherman’s Song
+
+Early Summer Rain at Mount Jiner
+Third Month of the Year of Wuxu
+
+Swallows skim over twin ponds with grace,
+In the rain, creek fish grow plump in their place.
+A hat of banana leaves,
+A robe of apricot blooms,
+I wander the woods, unbothered to return home.""",
             'bg_image': 'summer.png'
         },
         'fall': {
             'title': 'Fall Poem',
-            'content': 'Fall poem content...',
+            'content': """夜过夔门
+癸卯年九月
+
+苍风白帝汉宫秋，万里长江此转头。
+卧听潮声人半寐，一川幽梦月如钩。
+
+Passing Kui Gate at Night
+Ninth Month of the Year of Guimao
+
+Autumn winds sweep White Emperor’s ancient halls,
+The Yangtze turns here after countless miles.
+Half-asleep, I lie and listen to the tide,
+Dreams flow with the river, beneath a crescent moon.""",
             'bg_image': 'fall.png'
         },
         'winter': {
             'title': 'Winter Poem',
-            'content': 'Winter poem content...',
+            'content': """定风波
+
+岳阳楼
+
+怀古戊戌年八月
+
+千里霜涛越古楼，北山寒雁寄汀洲。碧水泓洄东去否？依旧。繁华洗替几曾休？
+百世英雄龙虎斗，淘走。惟余一幕洞庭秋。但愿红尘人共久，牵手。临风谈笑泛兰舟。
+
+Settling the Wind
+At Yueyang Tower
+Reflections on the Past, Eighth Month of the Year of Wuxu
+
+Frosted waves stretch a thousand miles beyond the ancient tower,
+Cold geese from the northern hills rest on the shoals below.
+Does the emerald water still circle eastward in its flow?
+Unchanging,
+Splendor rises and fades, ceaseless in its ebb and glow.
+Heroes across centuries clashed like tigers and dragons,
+Swept away,
+Only a scene of Lake Dongting in autumn stays.
+May mortals linger long amidst this worldly haze,
+Hand in hand,
+Laughing in the breeze aboard a fragrant orchid boat.""",
             'bg_image': 'winter.png'
         }
     }

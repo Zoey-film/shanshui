@@ -27,7 +27,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            border-bottom: 1px solid #333;
+            border-bottom: none;
         }
 
         .logo {
@@ -113,7 +113,7 @@
         }
 
         .season-image {
-            width: 50%;
+            width: 80%;
             margin: 0;
             position: relative;
             padding: 0;
@@ -124,7 +124,6 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            border-radius: 8px;
         }
 
         .featured-poem {
@@ -282,6 +281,9 @@
                     <img src="{{ url_for('static', filename='images/' + bg_image) }}" alt="{{ season_name }}">
                 </div>
             </div>
+
+
+            
             <div class="user-poems-section">
                 {% for poem in user_poems %}
                 <div class="user-poem">

@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>{{ season_name }} - Poetry</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
     <style>
         body {
             background-image: url("{{ url_for('static', filename='images/bg.png') }}");
@@ -15,15 +20,13 @@
             margin: 0;
             padding: 0;
         }
-
-        .page { display: none; }
-        .active { display: block; }
         
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 40px;
+            border-bottom: none;
         }
 
         .logo {
@@ -33,21 +36,23 @@
         .nav-links {
             display: flex;
             justify-content: center;
-            flex-grow: 1;
             align-items: center;
+            flex-grow: 1;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: black;
+            color: #333;
             font-size: 16px;
-            padding: 0 20px;
+            padding: 0 40px;
+            font-family: 'Jost', sans-serif;
         }
 
         .nav-separator {
-            color: black;
+            color: #333;
             font-size: 16px;
-            padding: 0 10px;
+            padding: 0;
+            margin: 0;
         }
 
         .sound-icon {
@@ -57,15 +62,17 @@
         .main-content {
             max-width: 800px;
             margin: 50px auto;
-            text-align: center;
+            text-align: left;
             padding: 0 20px;
+            letter-spacing: 0.1em; 
+            line-height: 2;
         }
 
         .season-row {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 25px;
             margin-top: 100px;
             max-width: 1000px;
             margin-left: auto;
@@ -74,9 +81,10 @@
 
         .season-card {
             position: relative;
-            width: 22%;
-            aspect-ratio: 1/2.5; /* Adjust height ratio to match image aspect */
+            width: 100%;
+            aspect-ratio: 1/2.5;
             cursor: pointer;
+            border-radius: 0;
         }
 
         .season-card img {
@@ -87,10 +95,8 @@
 
         .season-label {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: black;
+            font-size: 60px;
+            font-family: 'Libian SC', sans-serif;
         }
 
         .season-card a {
@@ -103,6 +109,18 @@
     </style>
 </head>
 <body>
+    <!-- typing effect -->
+    <div id="typing-effect" style="font-size: 20px; text-align: center;"></div>
+    <div id="main-content" style="display: none;">
+        <p>
+            My father studied Chinese language and literature in college and was part of the first 
+            generation to attend college after 1976. Writing poetry has been his lifelong passion, 
+            and he has created countless poems over the years. This website is my way of bringing his 
+            words to life—using AI to recreate the imagery in his poems and share the beauty of my hometown, 
+            Yueyang, Hunan, with the world.
+        </p>
+    </div>
+    
     <!-- Navigation -->
     <div class="nav-container">
         <img src="{{ url_for('static', filename='images/stamp.png') }}" alt="Logo" class="logo">
@@ -123,11 +141,7 @@
         <p>
             My father studied Chinese language and literature in college and was part of the first 
             generation to attend college after 1976. 
-        </p>
-        <p>
             Writing poetry has been his lifelong passion, and he has created countless poems over the years. 
-        </p>
-        <p>
             This website is my way of bringing his words to life—using AI to recreate the imagery in his poems and share the beauty of my hometown, Yueyang, Hunan, with the world.
         </p>
     </div>
@@ -136,25 +150,25 @@
     <div class="season-row">
         <div class="season-card">
             <a href="{{ url_for('season_page', season='spring') }}">
-                <img src="{{ url_for('static', filename='images/spring.jpg') }}" alt="Spring" class="season-image">
+                <img src="{{ url_for('static', filename='images/spring.png') }}" alt="Spring" class="season-image">
                 <div class="season-label">春</div>
             </a>
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='summer') }}">
-                <img src="{{ url_for('static', filename='images/summer.jpg') }}" alt="Summer" class="season-image">
+                <img src="{{ url_for('static', filename='images/summer.png') }}" alt="Summer" class="season-image">
                 <div class="season-label">夏</div>
             </a>
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='fall') }}">
-                <img src="{{ url_for('static', filename='images/fall.jpg') }}" alt="Fall" class="season-image">
+                <img src="{{ url_for('static', filename='images/fall.png') }}" alt="Fall" class="season-image">
                 <div class="season-label">秋</div>
             </a>
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='winter') }}">
-                <img src="{{ url_for('static', filename='images/winter.jpg') }}" alt="Winter" class="season-image">
+                <img src="{{ url_for('static', filename='images/winter.png') }}" alt="Winter" class="season-image">
                 <div class="season-label">冬</div>
             </a>
         </div>

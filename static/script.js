@@ -5,9 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const seasonRow = document.getElementById("season-row");
     const audio = document.getElementById('bgm');
     const toggleBtn = document.getElementById('music-toggle');
-    
+
+    // Extracting paths from data attributes
+    const musicOnImage = toggleBtn.getAttribute('data-music-on');
+    const musicOffImage = toggleBtn.getAttribute('data-music-off');
 
     let typingInProgress = true;
+    let isPlaying = false; // we'll try to play immediately
 
     function finishTyping() { 
         typingInProgress = false;
@@ -46,25 +50,33 @@ document.addEventListener("DOMContentLoaded", () => {
     typingEffect.addEventListener("click", skipTyping);
     typeWriter(text, typingEffect);
 
-    let isPlaying = false;
-
+    // Try to play the audio immediately
     audio.play().then(() => {
+        // If autoplay is allowed, show music_on icon and set isPlaying = true
         isPlaying = true;
+        toggleBtn.src = musicOnImage;
     }).catch(err => {
-        console.log("自动播放被阻止，需要用户交互来启动音乐。");
+        console.log("Autoplay blocked. User interaction needed.");
+        // If autoplay is blocked, we start with isPlaying=false and show music_on icon (since we want default as playing)
+        // But since we can't play, we should still show the icon as on since that's the intended default.
+        // The first toggle click will attempt to start playing.
+        isPlaying = false;
+        toggleBtn.src = music_on; // keep music_on to indicate default "wants to be playing"
     });
 
     toggleBtn.addEventListener('click', () => {
+        // If currently playing, toggle off
         if (isPlaying) {
             audio.pause();
             isPlaying = false;
-            musicIcon.src = "{{ url_for('static', filename='images/music_off.png') }}";
+            toggleBtn.src = musicOffImage;
         } else {
+            // Try to play again
             audio.play().then(() => {
                 isPlaying = true;
-                musicIcon.src = "{{ url_for('static', filename='images/music_on.png') }}";
+                toggleBtn.src = musicOnImage;
             }).catch(err => {
-                console.error("无法播放音乐：", err);
+                console.error("Unable to play music:", err);
             });
         }
     });

@@ -67,6 +67,10 @@ def submit_poem():
     
     return redirect(url_for('season_page', season=seed_page))
 
+@app.route('/favicon.ico')
+def favicon():
+    return redirect(url_for('static', filename='images/favicon.ico'))
+
 @app.route('/')
 def index():
     return render_template('index.html')

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const musicOffImage = toggleBtn.getAttribute('data-music-off');
 
     let typingInProgress = true;
-    let isPlaying = false; // we'll try to play immediately
+    let isPlaying = false; 
 
     function finishTyping() { 
         typingInProgress = false;
@@ -52,26 +52,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Try to play the audio immediately
     audio.play().then(() => {
-        // If autoplay is allowed, show music_on icon and set isPlaying = true
         isPlaying = true;
         toggleBtn.src = musicOnImage;
     }).catch(err => {
         console.log("Autoplay blocked. User interaction needed.");
-        // If autoplay is blocked, we start with isPlaying=false and show music_on icon (since we want default as playing)
-        // But since we can't play, we should still show the icon as on since that's the intended default.
-        // The first toggle click will attempt to start playing.
+
         isPlaying = false;
-        toggleBtn.src = music_on; // keep music_on to indicate default "wants to be playing"
+        toggleBtn.src = music_on; 
     });
 
     toggleBtn.addEventListener('click', () => {
-        // If currently playing, toggle off
         if (isPlaying) {
             audio.pause();
             isPlaying = false;
             toggleBtn.src = musicOffImage;
         } else {
-            // Try to play again
             audio.play().then(() => {
                 isPlaying = true;
                 toggleBtn.src = musicOnImage;

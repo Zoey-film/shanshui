@@ -106,4 +106,19 @@ body {
       opacity: 1;
     }
   }
-  
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.sound-icon {
+    cursor: pointer;
+    z-index: 10000;
+}

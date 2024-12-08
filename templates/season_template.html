@@ -189,7 +189,7 @@
 
         .content-container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 200px auto;
             padding: 0 40px;
         }
 
@@ -228,7 +228,6 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
         }
 
         .form-label {
@@ -268,7 +267,21 @@
             <span class="nav-separator">|</span>
             <a href="{{ url_for('season_page', season='winter') }}">WINTER</a>
         </div>
-        <img src="{{ url_for('static', filename='images/music_on.png') }}" alt="Sound" class="sound-icon">
+
+        <!-- Include data attributes for music toggle images -->
+        <img 
+            src="{{ url_for('static', filename='images/music_on.png') }}" 
+            alt="Sound" class="sound-icon" 
+            id="music-toggle" 
+            data-music-on="{{ url_for('static', filename='images/music_on.png') }}"
+            data-music-off="{{ url_for('static', filename='images/music_off.png') }}"
+        >
+        
+        <audio 
+            id="bgm" 
+            src="{{ url_for('static', filename='Find_Me_In_The_Nearest_Forest.mp3') }}" 
+            loop
+        ></audio>
     </div>
 
     <div class="season-page">
@@ -304,5 +317,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </body>
 </html> 

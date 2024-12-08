@@ -94,29 +94,24 @@ Bamboo shadows veil the village in misty rain,
 Flowers bloom deep on the ancient ferry plain.
 Spring breezes caress my face so gently,
 Each strand whispers of homesick melancholy.""",
-            'bg_image': 'spring.png'
+            'bg_image': 'spring1.png'
         },
         'summer': {
             'title': 'Summer Poem',
-            'content': """渔歌子
+            'content': """游团湖
+戊戌年五月
 
-金鹗山 立夏 小雨
-戊戌年三月
+云身荷影鉴湖光，莲叶翻风碧四方。
+菡萏遥开三百里，千般仙子水中央。
 
-乳燕双潭水上飞。溪头游鲫雨中肥。
-蕉叶帽，杏花衣。林间独步不怀归。
+A Tour of Tuan Lake
+Fifth Month of the Year of Wuxu
 
-Fisherman’s Song
-
-Early Summer Rain at Mount Jiner
-Third Month of the Year of Wuxu
-
-Swallows skim over twin ponds with grace,
-In the rain, creek fish grow plump in their place.
-A hat of banana leaves,
-A robe of apricot blooms,
-I wander the woods, unbothered to return home.""",
-            'bg_image': 'summer.png'
+Clouds and lotus shadows mirror the lake’s light,
+Lotus leaves sway as winds spread green in all directions.
+Buds bloom afar, stretching three hundred miles,
+A thousand fairies grace the waters’ heart.""",
+            'bg_image': 'summer2.png'
         },
         'fall': {
             'title': 'Fall Poem',
@@ -140,7 +135,6 @@ Dreams flow with the river, beneath a crescent moon.""",
             'content': """定风波
 
 岳阳楼
-
 怀古戊戌年八月
 
 千里霜涛越古楼，北山寒雁寄汀洲。碧水泓洄东去否？依旧。繁华洗替几曾休？
@@ -153,15 +147,12 @@ Reflections on the Past, Eighth Month of the Year of Wuxu
 Frosted waves stretch a thousand miles beyond the ancient tower,
 Cold geese from the northern hills rest on the shoals below.
 Does the emerald water still circle eastward in its flow?
-Unchanging,
-Splendor rises and fades, ceaseless in its ebb and glow.
+Unchanging, Splendor rises and fades, ceaseless in its ebb and glow.
 Heroes across centuries clashed like tigers and dragons,
-Swept away,
-Only a scene of Lake Dongting in autumn stays.
+Swept away, Only a scene of Lake Dongting in autumn stays.
 May mortals linger long amidst this worldly haze,
-Hand in hand,
-Laughing in the breeze aboard a fragrant orchid boat.""",
-            'bg_image': 'winter.png'
+Hand in hand, Laughing in the breeze aboard a fragrant orchid boat."""
+            'bg_image': 'winter1.png'
         }
     }
     

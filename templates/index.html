@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
     <style>
         body {
@@ -109,18 +108,6 @@
     </style>
 </head>
 <body>
-    <!-- typing effect -->
-    <div id="typing-effect" style="font-size: 20px; text-align: center;"></div>
-    <div id="main-content" style="display: none;">
-        <p>
-            My father studied Chinese language and literature in college and was part of the first 
-            generation to attend college after 1976. Writing poetry has been his lifelong passion, 
-            and he has created countless poems over the years. This website is my way of bringing his 
-            words to life—using AI to recreate the imagery in his poems and share the beauty of my hometown, 
-            Yueyang, Hunan, with the world.
-        </p>
-    </div>
-    
     <!-- Navigation -->
     <div class="nav-container">
         <img src="{{ url_for('static', filename='images/stamp.png') }}" alt="Logo" class="logo">
@@ -136,18 +123,20 @@
         <img src="{{ url_for('static', filename='images/icon_volume_up.png') }}" alt="Sound" class="sound-icon">
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
+    <!-- typing effect -->
+    <div id="typing-effect" style="font-size: 20px; text-align: center;"></div>
+    <div id="main-content" style="display: none;">
         <p>
             My father studied Chinese language and literature in college and was part of the first 
-            generation to attend college after 1976. 
-            Writing poetry has been his lifelong passion, and he has created countless poems over the years. 
-            This website is my way of bringing his words to life—using AI to recreate the imagery in his poems and share the beauty of my hometown, Yueyang, Hunan, with the world.
+            generation to attend college after 1976. Writing poetry has been his lifelong passion, 
+            and he has created countless poems over the years. This website is my way of bringing his 
+            words to life—using AI to recreate the imagery in his poems and share the beauty of my hometown, 
+            Yueyang, Hunan, with the world.
         </p>
     </div>
 
     <!-- Seasons Section -->
-    <div class="season-row">
+    <div class="season-row" id="season-row" style="display:none;">
         <div class="season-card">
             <a href="{{ url_for('season_page', season='spring') }}">
                 <img src="{{ url_for('static', filename='images/spring.png') }}" alt="Spring" class="season-image">
@@ -173,6 +162,7 @@
             </a>
         </div>
     </div>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </body>
 </html>
  

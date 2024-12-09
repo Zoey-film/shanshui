@@ -161,13 +161,13 @@
     <div class="season-row" id="season-row" style="display:none;">
         <div class="season-card">
             <a href="{{ url_for('season_page', season='spring') }}">
-                <img src="{{ url_for('static', filename='images/spring.png') }}" alt="Spring" class="season-image">
+                <img src="{{ url_for('static', filename='images/spring4.png') }}" alt="Spring" class="season-image">
                 <div class="season-label">春</div>
             </a>
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='summer') }}">
-                <img src="{{ url_for('static', filename='images/summer.png') }}" alt="Summer" class="season-image">
+                <img src="{{ url_for('static', filename='images/summer1.png') }}" alt="Summer" class="season-image">
                 <div class="season-label">夏</div>
             </a>
         </div>
@@ -179,11 +179,15 @@
         </div>
         <div class="season-card">
             <a href="{{ url_for('season_page', season='winter') }}">
-                <img src="{{ url_for('static', filename='images/winter.png') }}" alt="Winter" class="season-image">
+                <img src="{{ url_for('static', filename='images/winter2.png') }}" alt="Winter" class="season-image">
                 <div class="season-label">冬</div>
             </a>
         </div>
     </div>
+    <!-- Add this at the bottom of your body tag -->
+        <footer style="text-align: left; bottom: 50px; left: 0; padding: 50px; color: #333;">
+        © 2024 Zoey (Zhiyú) Zhang
+    </footer>
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </body>
 </html>

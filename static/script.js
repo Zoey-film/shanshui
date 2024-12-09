@@ -1,3 +1,4 @@
+console.log("JavaScript is running on season_template.html");
 document.addEventListener("DOMContentLoaded", () => {
     const text = "My father studied Chinese language and literature in college and was part of the first generation to attend college after 1976. Writing poetry has been his lifelong passion, and he has created countless poems over the years. This website is my way of bringing his words to life—using AI to recreate the imagery in his poems and share the beauty of my hometown, Yueyang, Hunan, with the world.";
     const typingEffect = document.getElementById("typing-effect");
@@ -74,5 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("Unable to play music:", err);
             });
         }
+    });
+
+    const bgm = document.getElementById('bgm');
+    bgm.play().then(() => {
+        console.log("Audio is playing");
+    }).catch(err => {
+        console.error("Error playing audio:", err);
     });
 });

@@ -94,7 +94,7 @@ Bamboo shadows veil the village in misty rain,
 Flowers bloom deep on the ancient ferry plain.
 Spring breezes caress my face so gently,
 Each strand whispers of homesick melancholy.""",
-            'bg_image': 'spring1.png'
+            'bg_image': 'spring4.png'
         },
         'summer': {
             'title': 'Summer Poem',
@@ -111,7 +111,7 @@ Clouds and lotus shadows mirror the lake’s light,
 Lotus leaves sway as winds spread green in all directions.
 Buds bloom afar, stretching three hundred miles,
 A thousand fairies grace the waters’ heart.""",
-            'bg_image': 'summer2.png'
+            'bg_image': 'summer1.png'
         },
         'fall': {
             'title': 'Fall Poem',
@@ -133,7 +133,6 @@ Dreams flow with the river, beneath a crescent moon.""",
         'winter': {
             'title': 'Winter Poem',
             'content': """定风波
-
 岳阳楼
 怀古戊戌年八月
 
@@ -151,8 +150,8 @@ Unchanging, Splendor rises and fades, ceaseless in its ebb and glow.
 Heroes across centuries clashed like tigers and dragons,
 Swept away, Only a scene of Lake Dongting in autumn stays.
 May mortals linger long amidst this worldly haze,
-Hand in hand, Laughing in the breeze aboard a fragrant orchid boat."""
-            'bg_image': 'winter1.png'
+Hand in hand, Laughing in the breeze aboard a fragrant orchid boat.""",
+            'bg_image': 'winter2.png'
         }
     }
     

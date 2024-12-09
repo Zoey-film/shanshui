@@ -75,3 +75,8 @@ Feel free to submit issues and enhancement requests!
 ## License
 
 [Your chosen license]
+
+## Video Presentation
+Watch a short video presentation of the project on YouTube:
+
+[![Shanshui Poetry App Video](https://img.youtube.com/vi/5YDH4th9-fA/0.jpg)](https://www.youtube.com/watch?v=5YDH4th9-fA)

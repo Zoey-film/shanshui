@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const audio = document.getElementById('bgm');
     const toggleBtn = document.getElementById('music-toggle');
 
+    if (!audio || !toggleBtn) {
+        console.error("Audio or toggle button not found");
+        return;
+    }
+
     // Extracting paths from data attributes
     const musicOnImage = toggleBtn.getAttribute('data-music-on');
     const musicOffImage = toggleBtn.getAttribute('data-music-off');
@@ -17,14 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
     function finishTyping() { 
         typingInProgress = false;
         setTimeout(() => {
-            seasonRow.style.display = "flex";
+            if (seasonRow) {
+                seasonRow.style.display = "flex";
+            }
         }, 500);
     }
 
     function skipTyping() {
         if (typingInProgress) {
             typingInProgress = false;
-            typingEffect.innerHTML = text;
+            if (typingEffect) {
+                typingEffect.innerHTML = text;
+            }
             finishTyping();
         }
     }
@@ -48,8 +57,10 @@ document.addEventListener("DOMContentLoaded", () => {
         typing();
     }
 
-    typingEffect.addEventListener("click", skipTyping);
-    typeWriter(text, typingEffect);
+    if (typingEffect) {
+        typingEffect.addEventListener("click", skipTyping);
+        typeWriter(text, typingEffect);
+    }
 
     // Try to play the audio immediately
     audio.play().then(() => {
@@ -57,9 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleBtn.src = musicOnImage;
     }).catch(err => {
         console.log("Autoplay blocked. User interaction needed.");
-
         isPlaying = false;
-        toggleBtn.src = music_on; 
+        toggleBtn.src = musicOffImage; 
     });
 
     toggleBtn.addEventListener('click', () => {
